@@ -19,11 +19,11 @@ canGroupExec=$(( perm & 8 ));
 canOthersExec=$(( perm & 1 ));
 
 if [[ ! ( $canGroupExec -eq 0 ) ]]; then
-	getent passwd | grep "$gid" | nawk -F: -v uid=$uid '$3!=uid {print $1}';
+	getent passwd | grep "$gid" | nawk -F: -v uid="$uid" '$3!=uid {print $1}';
 fi;
 if [[ ! ( $canUserExec -eq 0 ) ]]; then
 	getent passwd | grep "$uid" | nawk -F: '{print $1}';
 fi;
 if [[ ! ( $canOthersExec -eq 0 ) ]]; then
-	getent passwd | nawk -F: -v uid=$uid -v gid=$gid '$3!=uid && $4!=gid {print $1}'
+	getent passwd | nawk -F: -v uid="$uid" -v gid="$gid" '$3!=uid && $4!=gid {print $1}'
 fi;
