@@ -1,37 +1,34 @@
 # learning-shell
 ## lab1
-Написать скрипт на языке shell, которая выводит список действий с номерами и ожидает ввода номера пункта, 
-после чего начинает выполнение заданных в этом пункте команд. <br><br>
-Скрипт должен корректно обрабатывать ситуацию окончания входного потока данных и позволять работать с относительными 
-и абсолютными именами файлов и каталогов, которые могут содержать: 
-пробелы и символы табуляции; символы '*', '?', '[', ']', '-', '~', '$' или состоять только из них. <br><br>
-Для команд удаления необходимо запрашивать собственное подтверждение дополнительно. 
-Текст запроса должен соответствовать системному (выводимому командой rm). 
-Ожидание ввода ответа происходит на новой строке. <br><br>
-Организовать обработку ошибок, например, при отсутствии удаляемого файла, для чего перенаправить вывод системных сообщений об ошибках в 
-файл-журнал с именем lab1_err, расположенном в домашней директории, и выдать свое сообщение на стандартный поток ошибок. 
-Каждый запрос на ввод должен сопровождаться сообщением на отдельной строке, содержащим информацию о том, какие данные должны быть введены.<br><br>
-Ожидание ввода происходит с новой строки. <br><br>
-Выход из скрипта должен осуществляться только при выборе соответствующего пункта меню или окончании стандартного потока ввода. 
-Каждый аргумент должен подаваться программе отдельной строкой. 
+Write a script in shell language, which displays a list of actions with numbers and waits for the number of the command to be entered, and then starts to execute the commands given in this command.
 
-**Пункты меню:**
-* Создать каталог
-* Сменить текущий каталог
-* Напечатать содержимое текущего каталога
-* Переместить файл
-* Удалить каталог с его содержимым
-* Выйти из программы
+The script should correctly handle the situation when the input stream ends and allow to work with relative and absolute names of files and directories, which may contain: spaces and tabulation symbols; symbols '*', '?', '[', ']', '-', '~', '$' or consist only of them.
+
+For deletion commands, you must request your own confirmation additionally. The request text must correspond to the system text (output by the rm command). Waiting for the response is on a new line.
+
+Organize error handling, for example, if there is no file to be deleted, for which purpose redirect the output of system error messages to the log file named lab1_err, located in the home directory, and issue its message to the standard error stream. Each input request should be accompanied by a message on a separate line containing information about what data should be entered.
+
+Waiting for input occurs on a new line.
+
+Exiting the script should be done only when the corresponding menu item is selected or the standard input stream is finished. Each argument must be submitted to the program on a separate line.       
+
+**Menu features:**
+* Create a directory
+* Change the current directory
+* Print the contents of the current directory
+* Move a file
+* Delete the directory with its contents
+* Exit the program
 
 ## lab2
-Написать два скрипта на языке shell, которые выводят списки:
-* *(lab2-1.sh)* имён каталогов в указанном каталоге, имеющих не менее одного подкаталога. Список отсортировать по времени модификации;
-* *(lab2-2.sh)* групп, которым принадлежат более чем указанное количество пользователей.
+Write two scripts in shell language, which output lists of:
+*(lab2-1.sh)* directory names in the specified directory that have at least one subdirectory. Sort the list by modification time;
+*(lab2-2.sh)* groups that have more than the specified number of users.
 
 ## lab3
-Написать два скрипта, котоыре выводят:
-* *(lab3-3.sh)*  Список пользователей, имеющих право исполнения заданного файла;
-* *(lab3-12.sh)* Список каталогов, в которыx заданный пользователь имеет право удаления файлов.
+Write two scripts to output:
+*(lab3-3.sh)* List of users that are allowed to execute the specified file;
+*(lab3-12.sh)* List of directories, in which the specified user has the right to delete files.
 
-Вся необходимая информация должна передаваться в скрипт через аргументы командной строки.
-Все файлы выбирать из текущего каталога исключая его подкаталоги.
+All the necessary information must be passed to the script through the command line arguments.
+Select all files from the current directory, excluding its subdirectories.
